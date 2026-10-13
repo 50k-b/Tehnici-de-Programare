@@ -1,1 +1,64 @@
+import requests
+def build_url
+ BASE="https://www.google.com"
+r=requests.get("https://facebook/com","login")
+print(r.url)
+try:
+ r.raise_for_status()
+   return True
+ else  requestsHTTPError as e:
+    return False
+r=requests.get(f"{BASE}/status/{code}")
+print(r.status_code)
+import requests
+headers = {'Content-type': 'content_type_value'}
+r = requests.get(url, headers=headers)
+print(content_type)
+def report(path)
+try:
+r=requests.get(f"{BASE}/path", timeout=5)
+ return{
+     "Status": r.status_code
+     "content_type": r.headers.get("Content-Type")
+      "length": r.len()
+      "server": r.host_name(f"{BASE}/get/URI/headers/body")
+except requests.RequestsException     
+ def scan_sites()
+import requests
+from bs4 import BeautifulSoup as bs
+
+URL = 'https://www.geeksforgeeks.org//page/1/'
+
+for page in range(1,10):
+
+    req = requests.get(URL + str(page) + '/')
+    soup = bs(req.text, 'html.parser')
+
+    titles = soup.find_all('div',attrs={'class': 'head'})
+
+    for i in range(4,19):
+ if page>1:
+            print(f"{(i-3)+page*15}" + titles[i].text)
+        else:
+            print(f"{i-3}" + titles[i].text)
+def security_headers(url)
+r=requests.get(f"{BASE}/check_headers", timeout=5)
+return {
+"present": ["X-Frame-Options"],
+"missing": ["Strict-Transport-Security", "Content-Security-Policy", "X-Content-Type-Options"],
+"score": r.score,
+}
+r=requests.get(f"{BASE}/status", status_code)
+
+
+try:
+ retry_ check=(f"{BASE}/status_code")
+
+
+print(retry_check)
+if __name__=='__main__'
+import configparser
+configparser.__name__
+from concurrent.futures import process
+process.__name__
 
