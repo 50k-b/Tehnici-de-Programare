@@ -30,7 +30,7 @@ def pe_servicii(tinte):
             continue
         grupe[serviciu] = []
         grupe[serviciu].append(port)
-
+    return grupe
 
 def peste_prag(tinte, prag):
     """Lista gazdelor cu un port mai mare decat pragul."""
