@@ -2,7 +2,7 @@ import os
 import tempfile
 import unittest
 
-import enumerare
+from arsenal.privesc import enum as enumerare
 
 
 def scrie(folder, nume_fisier, text):

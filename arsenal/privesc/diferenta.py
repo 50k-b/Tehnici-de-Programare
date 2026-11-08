@@ -1,5 +1,5 @@
 import os
-from arsenal.privesc.enumerare import citeste_linii, nume, GTFO
+from arsenal.privesc.enum import citeste_linii, nume, GTFO
 
 def cai(fisier):
     """Întoarce mulțimea căilor citite dintr-un fișier SUID."""
