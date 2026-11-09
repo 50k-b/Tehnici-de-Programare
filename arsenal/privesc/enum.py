@@ -16,8 +16,6 @@ GTFO = {
     "perl",
 }
 
-# Directoare în care poate scrie oricine: o comandă din ele e riscantă.
-DIRECTOARE_SCRIPTABILE = ("/tmp/", "/var/tmp/", "/dev/shm/")
 
 
 def citeste_linii(cale):
@@ -78,12 +76,7 @@ def cron_constatari(cale):
     if len(campuri) >= 7:
       user = campuri[5]
       comanda = " ".join(campuri[6:])
-      scriptabil = any(d in comanda for d in DIRECTOARE_SCRIPTABILE)
-      out.append({
-          "user": user,
-          "comanda": comanda,
-          "risc": "mare" if scriptabil else "normal",
-      })
+      out.append({"user": user, "comanda": comanda})
   return out
 
 

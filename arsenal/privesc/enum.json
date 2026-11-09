@@ -86,18 +86,15 @@
   "cron": [
     {
       "user": "root",
-      "comanda": "cd / && run-parts --report /etc/cron.hourly",
-      "risc": "normal"
+      "comanda": "cd / && run-parts --report /etc/cron.hourly"
     },
     {
       "user": "root",
-      "comanda": "/opt/backup/run.sh",
-      "risc": "normal"
+      "comanda": "/opt/backup/run.sh"
     },
     {
       "user": "www-data",
-      "comanda": "/home/www-data/clean.sh",
-      "risc": "normal"
+      "comanda": "/home/www-data/clean.sh"
     }
   ]
 }

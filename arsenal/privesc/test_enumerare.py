@@ -50,17 +50,15 @@ class TesteEnumerare(unittest.TestCase):
     rez = enumerare.sudo_constatari(cale)
     self.assertEqual([r["user"] for r in rez], ["bob"])
 
-  def test_cron_user_comanda_si_risc(self):
+  def test_cron_user_si_comanda(self):
     cale = scrie(self.d, "crontab.txt",
                  "*/5 * * * * root /opt/backup.sh\n"
                  "0 3 * * * www-data /tmp/job.sh --fast\n"
                  "linie scurta\n")
     rez = enumerare.cron_constatari(cale)
     self.assertEqual(len(rez), 2)
-    self.assertEqual(rez[0]["user"], "root")
-    self.assertEqual(rez[0]["risc"], "normal")
+    self.assertEqual(rez[0], {"user": "root", "comanda": "/opt/backup.sh"})
     self.assertEqual(rez[1]["comanda"], "/tmp/job.sh --fast")
-    self.assertEqual(rez[1]["risc"], "mare")
 
   def test_fisier_lipsa_da_lista_goala(self):
     rez = enumerare.citeste_sigur(enumerare.cron_constatari,
