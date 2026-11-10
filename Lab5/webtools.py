@@ -1,4 +1,4 @@
-"""webtools - mic modul pentru analiza unui site web.
+"""webtools -  modul pentru analiza unui site web.
 
 Laborator: funcții, metode și importuri pe web (Partea 5, ex. 44-50).
 
