@@ -39,10 +39,8 @@ SECURITY_HEADERS = [
     "Referrer-Policy",
 ]
 
-
-# --------------------------------------------------------------------------
 # Rețea: cereri HTTP
-# --------------------------------------------------------------------------
+
 def fetch(url: str, timeout: int = TIMEOUT) -> requests.Response:
     """Descarcă `url` cu GET și returnează obiectul Response.
 
@@ -66,10 +64,7 @@ def page_exists(url: str) -> bool:
     except requests.RequestException:
         return False
 
-
-# --------------------------------------------------------------------------
 # Analiza HTML (fără rețea)
-# --------------------------------------------------------------------------
 def get_title(html: str) -> str:
     """Returnează textul dintre <title> și </title> (curățat cu strip()).
 
@@ -128,9 +123,9 @@ def extract_links_bs4(html: str) -> list:
     return list(dict.fromkeys(a["href"] for a in soup.find_all("a", href=True)))
 
 
-# --------------------------------------------------------------------------
+
 # Antete de securitate
-# --------------------------------------------------------------------------
+
 def security_headers(url: str) -> dict:
     """Verifică prezența a 5 antete de securitate și returnează {antet: True/False}.
 
@@ -149,9 +144,9 @@ def score_headers(results: dict) -> str:
     return f"{present}/{len(results)}"
 
 
-# --------------------------------------------------------------------------
+
 # robots.txt
-# --------------------------------------------------------------------------
+
 def fetch_robots(base: str):
     """Returnează textul din /robots.txt sau None dacă fișierul lipsește."""
     try:
@@ -177,9 +172,9 @@ def disallowed_paths(robots_text) -> list:
     return paths
 
 
-# --------------------------------------------------------------------------
+
 # DNS, certificat, redirecționări
-# --------------------------------------------------------------------------
+
 def resolve(hostname: str) -> str:
     """Returnează adresa IP a lui `hostname`."""
     return socket.gethostbyname(hostname)
@@ -206,9 +201,9 @@ def redirect_chain(url: str) -> list:
     return chain
 
 
-# --------------------------------------------------------------------------
+
 # Verificarea mai multor căi + raport CSV (ex. 28 și 49)
-# --------------------------------------------------------------------------
+
 def check_paths(base: str, paths: list, delay: float = 1) -> dict:
     """Returnează {cale: cod_de_stare} pentru fiecare cale din `paths`.
 
@@ -236,9 +231,9 @@ def save_paths_csv(results: dict, filename: str = "report.csv") -> None:
             writer.writerow({"path": path, "status": status, "checked_at": checked_at})
 
 
-# --------------------------------------------------------------------------
+
 # Ex. 50: proiectul final
-# --------------------------------------------------------------------------
+
 def site_report(url: str, save_to: str = "report.json") -> dict:
     """Colectează informații despre un site, le afișează și le salvează în JSON.
 
