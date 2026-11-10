@@ -1,6 +1,5 @@
 # Laborator: funcții, metode și importuri pe web
 # Student: Vicol Nadejda
-#
 # Partea 1: Importuri (exercițiile 1-8)
 
 import time
@@ -98,17 +97,13 @@ def ex07():
 def ex08():
     """Ex. 8: când un import eșuează."""
     try:
-        import bs4  # noqa: F401
+        import bs4  
 
         print("bs4 este instalat, versiunea", bs4.__version__)
     except ImportError:
         print("Instalați modulul cu: pip install beautifulsoup4")
 
-    # Verificați-vă: modul vs. pachet vs. bibliotecă
-    # - modul:     un singur fișier .py (ex. helper.py)
-    # - pachet:    director cu mai multe module (de obicei cu __init__.py)
-    # - bibliotecă: termen general, colecție de pachete/module (requests, pandas)
-
+  
 
 if __name__ == "__main__":
     # Exercițiile cu rețea sunt separate prin pauze de 1 secundă.
